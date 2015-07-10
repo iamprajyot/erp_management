@@ -1,6 +1,6 @@
 - provide(:users, 'active')
 - provide(:title, 'Users')
-.container-fluid
+.container
   h1 Listing users
   .table-responsive
     table.table.table-striped.table-condensed.table-bordered.table-hover
@@ -21,8 +21,8 @@
             td = user.phone_no
             td
               .btn-group
-                = link_to '', user, class: 'btn btn-default btn-sm glyphicon glyphicon-user'
-                = link_to '', edit_user_path(user), class: 'btn btn-default btn-sm glyphicon glyphicon-pencil'
-                = link_to '', user, data: {:confirm => 'Are you sure?'}, :method => :delete, class: 'btn btn-default btn-sm glyphicon glyphicon-remove'
+                = link_to '', user, class: 'btn btn-default btn-md glyphicon glyphicon-user'
+                = link_to '', edit_user_path(user), class: 'btn btn-default btn-md glyphicon glyphicon-pencil'
+                = link_to '', user, data: {:confirm => 'Are you sure?'}, :method => :delete, class: 'btn btn-default btn-md glyphicon glyphicon-remove'
 
   = link_to 'New User', new_user_path
