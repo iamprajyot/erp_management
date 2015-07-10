@@ -1,27 +1,28 @@
-h1 Listing users
+- provide(:users, 'active')
+- provide(:title, 'Users')
+.container-fluid
+  h1 Listing users
+  .table-responsive
+    table.table.table-striped.table-condensed.table-bordered.table-hover
+      thead
+        tr
+          th First name
+          th Last name
+          th Email
+          th Phone no
+          th Actions
 
-table.table
-  thead
-    tr
-      th First name
-      th Last name
-      th Email
-      th Phone no
-      th
-      th
-      th
+      tbody
+        - @users.each do |user|
+          tr
+            td = user.first_name
+            td = user.last_name
+            td = user.email
+            td = user.phone_no
+            td
+              .btn-group
+                = link_to '', user, class: 'btn btn-default btn-sm glyphicon glyphicon-user'
+                = link_to '', edit_user_path(user), class: 'btn btn-default btn-sm glyphicon glyphicon-pencil'
+                = link_to '', user, data: {:confirm => 'Are you sure?'}, :method => :delete, class: 'btn btn-default btn-sm glyphicon glyphicon-remove'
 
-  tbody
-    - @users.each do |user|
-      tr
-        td = user.first_name
-        td = user.last_name
-        td = user.email
-        td = user.phone_no
-        td = link_to '', user, class: 'btn-default btn-sm glyphicon glyphicon-user'
-        td = link_to '', edit_user_path(user), class: 'btn btn-default btn-sm glyphicon glyphicon-pencil'
-        td = link_to '', user, data: {:confirm => 'Are you sure?'}, :method => :delete, class: 'btn btn-default btn-sm glyphicon glyphicon-remove'
-
-br
-
-= link_to 'New User', new_user_path
+  = link_to 'New User', new_user_path
