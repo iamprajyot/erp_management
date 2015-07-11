@@ -5,17 +5,33 @@
       ul
         - @user.errors.full_messages.each do |message|
           li = message
-
-  .field
-    = f.label :first_name
-    = f.text_field :first_name
-  .field
-    = f.label :last_name
-    = f.text_field :last_name
-  .field
-    = f.label :email
-    = f.text_field :email
-  .field
-    = f.label :phone_no
-    = f.text_field :phone_no
-  .actions = f.submit
+  table.table
+    tbody
+      tr
+        td= f.label :first_name
+        td= f.text_field :first_name
+      tr
+        td= f.label :last_name
+        td= f.text_field :last_name
+      tr
+        td= f.label :email
+        td= f.text_field :email
+      tr
+        td= f.label :phone_no
+        td= f.text_field :phone_no
+      = f.fields_for :address do |b|
+        tr 
+          td= b.label 'Home Address'
+          td= b.text_area :home_addr, row: 3
+        tr 
+          td= b.label 'Home Phone'
+          td= b.text_field :home_phone
+        tr 
+          td= b.label 'Factory Address'
+          td= b.text_area :factory_addr, row: 3
+        tr 
+          td= b.label 'Factory Phone'
+          td= b.text_field :factory_phone
+  .actions
+    = f.submit (@user.persisted? ? 'Update User' : 'Create User'), class: "btn btn-primary active btn-margin-right"
+    = link_to 'Back', users_path, class: 'btn btn-primary'

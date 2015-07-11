@@ -1,18 +1,30 @@
+- provide(:users, 'active')
+- provide(:title, 'Users')
 p#notice = notice
 
-p
-  strong First name:
-  = @user.first_name
-p
-  strong Last name:
-  = @user.last_name
-p
-  strong Email:
-  = @user.email
-p
-  strong Phone no:
-  = @user.phone_no
+table.table
+  tbody
+    tr
+      td
+        strong First name:
+      td= @user.first_name
+    tr
+      td
+        strong Last name:
+      td= @user.last_name
+    tr
+      td
+        strong Email:
+      td= @user.email
+    tr
+      td
+        strong Phone no:
+      td= @user.phone_no
+    tr
+      td
+        strong Home Address:
+      td= @user.address.home_addr
 
-= link_to 'Edit', edit_user_path(@user)
-'|
-= link_to 'Back', users_path
+.actions
+    = link_to 'Edit', edit_user_path(@user), class: "btn btn-primary active btn-margin-right"
+    = link_to 'Back', users_path, class: 'btn btn-primary'
