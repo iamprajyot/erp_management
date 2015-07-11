@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  home_addr: MyString
+  factory_addr: MyString
+  home_phone: MyString
+  factory_phone: MyString
+  vehicle_no: MyString
+  user_id: 
+
+two:
+  home_addr: MyString
+  factory_addr: MyString
+  home_phone: MyString
+  factory_phone: MyString
+  vehicle_no: MyString
+  user_id: 
