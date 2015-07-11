@@ -1,27 +1,26 @@
 - provide(:users, 'active')
 - provide(:title, 'Users')
-.container
-  h1 Listing users
-  table.table.table-striped.table-condensed.table-hover
-    thead
+h1 Listing users
+table.table.table-striped.table-condensed.table-hover
+  thead
+    tr
+      th First name
+      th Last name
+      th Email
+      th Phone no
+      th Actions
+
+  tbody
+    - @users.each do |user|
       tr
-        th First name
-        th Last name
-        th Email
-        th Phone no
-        th Actions
+        td = user.first_name
+        td = user.last_name
+        td = user.email
+        td = user.phone_no
+        td
+          .btn-group
+            = link_to '', user, class: 'btn btn-default btn-md glyphicon glyphicon-user'
+            = link_to '', edit_user_path(user), class: 'btn btn-default btn-md glyphicon glyphicon-pencil'
+            = link_to '', user, data: {:confirm => 'Are you sure?'}, :method => :delete, class: 'btn btn-default btn-md glyphicon glyphicon-trash'
 
-    tbody
-      - @users.each do |user|
-        tr
-          td = user.first_name
-          td = user.last_name
-          td = user.email
-          td = user.phone_no
-          td
-            .btn-group
-              = link_to '', user, class: 'btn btn-default btn-md glyphicon glyphicon-user'
-              = link_to '', edit_user_path(user), class: 'btn btn-default btn-md glyphicon glyphicon-pencil'
-              = link_to '', user, data: {:confirm => 'Are you sure?'}, :method => :delete, class: 'btn btn-default btn-md glyphicon glyphicon-trash'
-
-  = link_to 'New User', new_user_path, class: 'btn btn-primary'
+= link_to 'New User', new_user_path, class: 'btn btn-primary'

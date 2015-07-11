@@ -4,22 +4,26 @@ p#notice = notice
 
 table.table
   tbody
-  	tr
-  		td
-  			strong First name:
-  		td= @user.first_name
-	tr
-  		td
-  			strong Last name:
-  		td= @user.last_name
-	tr
-  		td
-  			strong Email:
-  		td= @user.email
-	tr
-  		td
-  			strong Phone no:
-  		td= @user.phone_no
+    tr
+      td
+        strong First name:
+      td= @user.first_name
+    tr
+      td
+        strong Last name:
+      td= @user.last_name
+    tr
+      td
+        strong Email:
+      td= @user.email
+    tr
+      td
+        strong Phone no:
+      td= @user.phone_no
+    tr
+      td
+        strong Home Address:
+      td= @user.address.home_addr
 
 .actions
     = link_to 'Edit', edit_user_path(@user), class: "btn btn-primary active btn-margin-right"

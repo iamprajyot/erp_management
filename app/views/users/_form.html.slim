@@ -19,9 +19,19 @@
       tr
         td= f.label :phone_no
         td= f.text_field :phone_no
-      tr 
-        td= f.label 'Home Address'
-        td= f.text_area :home_addr, row: 3
+      = f.fields_for :address do |b|
+        tr 
+          td= b.label 'Home Address'
+          td= b.text_area :home_addr, row: 3
+        tr 
+          td= b.label 'Home Phone'
+          td= b.text_field :home_phone
+        tr 
+          td= b.label 'Factory Address'
+          td= b.text_area :factory_addr, row: 3
+        tr 
+          td= b.label 'Factory Phone'
+          td= b.text_field :factory_phone
   .actions
     = f.submit (@user.persisted? ? 'Update User' : 'Create User'), class: "btn btn-primary active btn-margin-right"
     = link_to 'Back', users_path, class: 'btn btn-primary'

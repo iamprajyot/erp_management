@@ -4,4 +4,36 @@
 
 .navbar-brand {
     margin-top: -15px;
+    margin-bottom: -15px;
+    height: 20px;
+}
+
+.sidebar{
+	background-color: #E7E7E7;
+	width: 12%;
+	padding: 0 0 0 0;
+	height: 100%;
+	margin-left: -15px;
+	position: fixed;
+
+
+	li {
+		a
+		{
+			padding-left: 30px;
+		}
+	}
+}
+
+.navbar{
+	margin-bottom: 0px;
+	padding-right: 30px;
+}
+
+.container-fluid{
+	margin-top: 50px;
+}
+
+.main-page-content{
+	float: right;
 }
