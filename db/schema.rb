@@ -13,26 +13,29 @@
 
 ActiveRecord::Schema.define(version: 20150711085806) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "addresses", force: :cascade do |t|
-    t.string   "home_addr",     limit: 255
-    t.string   "factory_addr",  limit: 255
-    t.string   "home_phone",    limit: 255
-    t.string   "factory_phone", limit: 255
-    t.string   "vehicle_no",    limit: 255
-    t.integer  "user_id",       limit: 4
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.string   "home_addr"
+    t.string   "factory_addr"
+    t.string   "home_phone"
+    t.string   "factory_phone"
+    t.string   "vehicle_no"
+    t.integer  "user_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   add_index "addresses", ["user_id"], name: "index_addresses_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "first_name", limit: 255
-    t.string   "last_name",  limit: 255
-    t.string   "email",      limit: 255
-    t.string   "phone_no",   limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "phone_no"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "addresses", "users"
