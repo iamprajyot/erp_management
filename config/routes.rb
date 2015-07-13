@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :items
   resources :users
   get 'home/show'
   root 'users#index'
