@@ -7,7 +7,7 @@
       ul
         - @item.errors.full_messages.each do |message|
           li = message
-  table.table
+  table.table-responsive
     thead
       tr
         th= f.label :name
@@ -17,6 +17,6 @@
     tbody
       tr
         td= f.text_field :name
-        td= f.text_field :quantity
+        td= f.collection_select :quantity, Item::QUANTITY_COLLECTION, :to_s, :to_s, include_blank: false
         td= f.text_field :rate
         td= f.submit

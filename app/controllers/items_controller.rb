@@ -5,7 +5,7 @@ class ItemsController < ApplicationController
   # GET /items.json
   def index
     @item = Item.new
-    @items = Item.all
+    @items = Item.order(updated_at: :desc)
   end
 
   # GET /items/1
@@ -20,7 +20,7 @@ class ItemsController < ApplicationController
 
   # GET /items/1/edit
   def edit
-    @items = Item.all
+    @items = Item.order(updated_at: :desc)
     render :index
   end
 
@@ -34,7 +34,8 @@ class ItemsController < ApplicationController
         format.html { redirect_to items_path, notice: 'Item was successfully created.' }
         format.json { render :show, status: :created, location: @item }
       else
-        format.html { render :new }
+        @items = Item.order(updated_at: :desc)
+        format.html { render :index }
         format.json { render json: @item.errors, status: :unprocessable_entity }
       end
     end
