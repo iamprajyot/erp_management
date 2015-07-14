@@ -7,16 +7,14 @@
       ul
         - @item.errors.full_messages.each do |message|
           li = message
-  table.table-responsive
-    thead
-      tr
-        th= f.label :name
-        th= f.label :quantity
-        th= f.label :rate
-        th Action
-    tbody
-      tr
-        td= f.text_field :name
-        td= f.collection_select :quantity, Item::QUANTITY_COLLECTION, :to_s, :to_s, include_blank: false
-        td= f.text_field :rate
-        td= f.submit
+  .col-xs-6.col-sm-3
+    = f.label :name
+    = f.text_field :name
+  .col-xs-6.col-sm-3
+    = f.label :unit
+    = f.collection_select :unit, Item::UNIT_COLLECTION, :to_s, :to_s, include_blank: false
+  .col-xs-6.col-sm-3
+    = f.label :rate
+    = f.text_field :rate
+  .col-xs-6.col-sm-3
+    = f.submit

@@ -35,5 +35,17 @@
 }
 
 .main-page-content{
-	float: right;
+	float: left;
+    margin-left: 15%;
+    margin-top: 2%;
+}
+
+.col-xs-6, .col-sm-3{
+	label{
+		margin-left: 35%;
+	}
+
+	select{
+		width: 90%;
+	}
 }

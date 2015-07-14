@@ -1,6 +1,6 @@
 class Item < ActiveRecord::Base
 
-	validates_presence_of :name, :quantity, :rate
+	validates_presence_of :name, :unit, :rate
 	
 	PIECE = 'Piece'
 	DOZEN = 'Dozen'
@@ -9,6 +9,6 @@ class Item < ActiveRecord::Base
 	LITER = 'Liter'
 	KG = 'KG'
 
-	QUANTITY_COLLECTION = [PIECE, DOZEN, GROSS, FEET, LITER, KG]
+	UNIT_COLLECTION = [PIECE, DOZEN, GROSS, FEET, LITER, KG]
 	
 end
