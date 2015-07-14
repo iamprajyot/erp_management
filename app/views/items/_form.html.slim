@@ -7,14 +7,16 @@
       ul
         - @item.errors.full_messages.each do |message|
           li = message
-  .col-xs-6.col-sm-3
-    = f.label :name
-    = f.text_field :name
-  .col-xs-6.col-sm-3
-    = f.label :unit
-    = f.collection_select :unit, Item::UNIT_COLLECTION, :to_s, :to_s, include_blank: false
-  .col-xs-6.col-sm-3
-    = f.label :rate
-    = f.text_field :rate
-  .col-xs-6.col-sm-3
-    = f.submit
+  .row.placeholder
+    .col-xs-6.col-sm-3.placeholder
+      = f.label :name
+      = f.text_field :name
+    .col-xs-6.col-sm-3
+      = f.label :unit
+      = f.collection_select :unit, Item::UNIT_COLLECTION, :to_s, :to_s, include_blank: false
+    .col-xs-6.col-sm-3
+      = f.label :rate
+      = f.text_field :rate
+    .col-xs-6.col-sm-3
+      = f.label 'Action'
+      = f.submit

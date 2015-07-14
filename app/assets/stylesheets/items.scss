@@ -1,3 +1,41 @@
-// Place all the styles related to the Items controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.items{
+	.col-xs-6, .col-sm-3{
+		label{
+			margin-left: 40%;
+		}
+
+		input, select{
+			width: 100%;
+		}
+	}
+
+	table, tr, td, th{
+		border: 1px solid #000 !important;
+	}
+
+	table{
+
+		th:first-child{
+			width: 50%;
+		}
+
+		th:second-child{
+			width: 20%;
+		}
+		th:last-child{
+			width: 11%;
+		}
+	}
+
+	.btn{
+		line-height: 0.5;
+	}
+
+	th{
+		background: none repeat scroll 0 0 #00e8ee;
+	}
+
+	hr{
+		border: 1px dotted;
+	}
+}

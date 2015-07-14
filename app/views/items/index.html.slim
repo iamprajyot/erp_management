@@ -1,6 +1,7 @@
 == render 'form'
+hr
 .table-responsive
-  table.table-striped.table-condensed.table-hover
+  table.table.table-striped.table-condensed.table-hover.table-bordered
     thead
       tr
         th Name
@@ -16,5 +17,5 @@
           td = item.rate
           td
             .btn-group
-              = link_to '', edit_item_path(item), class: 'btn btn-default btn-md glyphicon glyphicon-pencil'
-              = link_to '', item, data: {:confirm => 'Are you sure?'}, :method => :delete, class: 'btn btn-default btn-md glyphicon glyphicon-trash'
+              = link_to '', edit_item_path(item), class: 'btn btn-md glyphicon glyphicon-pencil'
+              = link_to '', item, data: {:confirm => 'Are you sure?'}, :method => :delete, class: 'btn btn-md glyphicon glyphicon-trash'
