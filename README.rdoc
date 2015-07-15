@@ -10,52 +10,52 @@ Requirements:
 
 4.	git clone https://github.com/iamprajyot/erp_management.git
 
-5.	Create feature branch for each feature with branch name starting with 'erp_{feature-name}'
+5.	Create feature branch for each feature with branch name starting with erp_{feature-name}
+
+6.	After done working check the code by ( git diff <filename> ) to each file
 			
-6.	After done working check the code by 'git diff <filename>' to each file
-			
-7.	And files before commiting by 'git add <filename>'
-			
-8.	Commit the feature branch localy by 'git commit -m <commit message>'
-			
-9.	Push the feature branch by 'git push origin "erp_{feature-name}"'
-			
+7.	And files before commiting by (  git add <filename> )
+
+8.	Commit the feature branch localy by (  git commit -m <commit message>  )
+
+9.	Push the feature branch by (  git push origin erp_{feature-name}  )
+
 10.	Go to github and raise the pull request against develop branch.
-			
-11.	If pull request accepted and not merged by author by asked to 
+
+11.	If pull request accepted and not merged by author by asked to
 
 12.	Install postgresql as following
 
 13.	sudo apt-get update -> Update the libraries
-	
+
 14.	sudo apt-get install postgresql postgresql-contrib -> Installs postgresql
-	
+
 15.	sudo -i -u postgres -> loging to postgresql terminal
-	
+
 16.	createuser -P -s -e [USERNAME] -> db username
-	
+
 17.	give the password
 
 18. update username and password in config/database.yml
 	
 19.	Run bundle install
-	
+
 20.	If got any problem installing Postgresql gem i.e 'gem pg' then follow
 
 21. sudo apt-get install libpq-dev
 
 22. gem install pg -v '0.18.2'
-	
+
 23. Run bundle install
 
 24. Bundle is COMPLETE now.
 
 25. Set up the DB.
-	
+
 26. rake db:create
-	
+
 27.	rake db:migrate
-	
+
 28.	rake db:seed
 
 29. foreman start
