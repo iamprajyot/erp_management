@@ -3,34 +3,61 @@
 Requirements:
 
 1. 	Ruby 2.1.5 or higher
+
 2. 	Rails 4.x
+
 3. 	Postgrrsql
+
 4.	git clone https://github.com/iamprajyot/erp_management.git
+
 5.	Push :
+
 		Work on feature branch 
+
 			- Create featre branch for each feature with branch name starting with 'erp_{feature-name}'
+			
 			- After done working check the code by 'git diff <filename>' to each file
+			
 			- And files before commiting by 'git add <filename>'
+			
 			- Commit the feature branch localy by 'git commit -m <commit message>'
+			
 			- Push the feature branch by 'git push origin "erp_{feature-name}"'
+			
 			- Go to github and raise the pull request against develop branch.
+			
 			- If pull request accepted and not merged by author by asked to 
 
 6. Install postgresql
+
 	1. sudo apt-get update -> Update the libraries
+	
 	2. sudo apt-get install postgresql postgresql-contrib -> Installs postgresql
+	
 	3. sudo -i -u postgres -> loging to postgresql terminal
+	
 	4. createuser -P -s -e [USERNAME] -> db username
+	
 	5. give the password
+	
 	6. Run bundle install
+	
 	7. If got any problem installing Postgresql gem i.e 'gem pg' then follow
 		a. sudo apt-get install libpq-dev
 		b. gem install pg -v '0.18.2'
+	
 	8. Run bundle install
+	
 	9. update username and password in config/database.yml
+
 7. Bundle is COMPLETE.
+
 8. Set up the DB.
+	
 	1. rake db:create
+	
 	2. rake db:migrate
+	
 	3. rake db:seed
+
 9. foreman start
